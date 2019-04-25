@@ -4,8 +4,8 @@ ekara:
       repository: nirekin/core-stack
       ref: master
     ek-aws:
-      repository: ekara-platform/aws-provider
-      ref: master
+      repository: tbouvet/aws-provider
+      ref: machines-list
     ek-openstack:
       repository: ekara-platform/openstack-provider
       ref: master
