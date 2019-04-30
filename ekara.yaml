@@ -2,16 +2,12 @@ ekara:
   components:
     ek-core:
       repository: ekara-platform/core-stack
-      ref: master
     ek-aws:
-      repository: tbouvet/aws-provider
-      ref: machines-list
+      repository: ekara-platform/aws-provider
     ek-openstack:
       repository: ekara-platform/openstack-provider
-      ref: master
     ek-swarm:
       repository: ekara-platform/swarm-orchestrator
-      ref: master
 
 stacks:
   ek-core:
