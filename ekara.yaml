@@ -65,8 +65,13 @@ orchestrator:
 stacks:
   ek-core:
     component: ek-core
+    copies:
+      consul:
+        path: "{{ .Vars.ekara.path }}/consul"
+      api:
+        path: "{{ .Vars.ekara.path }}/api"
     params:
       consul:
         dataDir: "{{ .Vars.ekara.path }}/consul"
       api:
-        workDir: "{{ .Vars.ekara.path }}/engine"
+        workDir: "{{ .Vars.ekara.path }}/api"
