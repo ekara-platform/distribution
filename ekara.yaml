@@ -51,10 +51,10 @@ providers:
       volumes:
         ekara:
           ebs:
-            volume_size: 20
+            volume_size: {{ .Vars.ekara.volume.size }}
             delete_on_termination: true
           fs:
-            mount_path: {{ .Vars.ekara.path }}
+            mount_path: {{ .Vars.ekara.volume.path }}
   ek-azure:
     component: ek-azure
 
@@ -62,14 +62,14 @@ orchestrator:
   component: ek-swarm
   params:
     daemon:
-      data-root: "{{ .Vars.ekara.path }}/docker"
+      data-root: "{{ .Vars.ekara.volume.path }}/docker"
 
 #stacks:
 #  ek-core:
 #    component: ek-core
 #    copies:
 #      api:
-#        path: "{{ .Vars.ekara.path }}/api"
+#        path: "{{ .Vars.ekara.volume.path }}/api"
 #    params:
 #      api:
-#        workDir: "{{ .Vars.ekara.path }}/api"
+#        workDir: "{{ .Vars.ekara.volume.path }}/api"
