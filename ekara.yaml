@@ -18,7 +18,9 @@ ekara:
 
 vars:
   ekara:
-    path: /var/lib/ekara
+    volume:
+      path: /var/lib/ekara
+      size: 20
 
 providers:
   ek-aws:
@@ -62,16 +64,12 @@ orchestrator:
     daemon:
       data-root: "{{ .Vars.ekara.path }}/docker"
 
-stacks:
-  ek-core:
-    component: ek-core
-    copies:
-      consul:
-        path: "{{ .Vars.ekara.path }}/consul"
-      api:
-        path: "{{ .Vars.ekara.path }}/api"
-    params:
-      consul:
-        dataDir: "{{ .Vars.ekara.path }}/consul"
-      api:
-        workDir: "{{ .Vars.ekara.path }}/api"
+#stacks:
+#  ek-core:
+#    component: ek-core
+#    copies:
+#      api:
+#        path: "{{ .Vars.ekara.path }}/api"
+#    params:
+#      api:
+#        workDir: "{{ .Vars.ekara.path }}/api"
