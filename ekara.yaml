@@ -1,4 +1,5 @@
 ekara:
+  base: https://github.com
   components:
     ek-aws:
       repository: ekara-platform/aws-provider
